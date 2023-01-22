@@ -1,0 +1,84 @@
+menu "SPI LCD Configuration"
+
+    config ENABLE_SPI_LCD
+        prompt "SPI LCD"
+        bool "SPI_LCD"
+        help
+            Select to use SPI LCD component
+
+
+        config SPI_MOSI_PIN
+            int "SPI MOSI GPIO"
+            default 22
+            depends on ENABLE_SPI_LCD
+            help
+                GPIO number to use for MOSI LCD.
+        
+        config SPI_MISO_PIN
+            int "SPI MISO GPIO"
+            default 22
+            depends on ENABLE_SPI_LCD
+            help
+                GPIO number to use for MISO LCD.
+
+        config SPI_SCK_PIN
+            int "SPI SCK GPIO"
+            default 22
+            depends on ENABLE_SPI_LCD
+            help
+                GPIO number to use for SCK LCD.
+
+        config SPI_CS_PIN
+            int "SPI CS GPIO"
+            default 22
+            depends on ENABLE_SPI_LCD
+            help
+                GPIO number to use for CS LCD.
+
+        config SPI_RST_PIN
+            int "SPI RESET GPIO"
+            default 22
+            depends on ENABLE_SPI_LCD
+            help
+                GPIO number to use for RST LCD.
+
+        config SPI_BL_PIN
+            int "SPI BL GPIO"
+            default 22
+            depends on ENABLE_SPI_LCD
+            help
+                GPIO number to use for BL LCD.
+
+        config SPI_DC_PIN
+            int "SPI Data/Command GPIO"
+            default 22
+            depends on ENABLE_SPI_LCD
+            help
+                GPIO number to use for D/C LCD.
+        
+        config SPI_SPEED
+            int "SPI clock speed"
+            default 20000000
+            depends on ENABLE_SPI_LCD
+            help
+                Default clock for spi transmission.
+
+        choice SPI_HOST_TYPE
+            prompt "SPI HOST selection"
+            default SPI_HOST2
+            depends on ENABLE_SPI_LCD
+            help
+                Select SPI channel to communicate
+                
+            config SPI_HOST1
+                bool  "SPI1_HOST"
+                help
+                    Select this to use default SPI channel at host1
+    
+            config SPI_HOST2
+                bool "SPI2_HOST"
+                help
+                    elect this to use default SPI channel at host2
+        
+        endchoice
+endmenu

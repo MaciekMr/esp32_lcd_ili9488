@@ -1,0 +1,34 @@
+menu "TFT LCD Configuration"
+
+    config ENABLE_TFT_LCD_MENU
+        prompt "Enable TFT LCD"
+        bool "TFT_LCD"
+        help
+            Select to use TFT LCD component
+
+    choice TFT_LCD_TYPE
+        prompt "TFT LCD selection"
+        default ILI9488
+        depends on ENABLE_TFT_LCD_MENU
+        help
+            Select ILI9488 TFT LCD
+            
+        config ILI9488
+            bool  "ILI9488"
+            help
+                Select this to use ILI9488 LCD
+
+        config ILI9432
+            bool "ILI9432"
+            help
+                Select this to use ILI9432 LCD
+    
+    endchoice
+        
+    config ENABLE_TFT_TOUCH_MENU
+        prompt "Enable TFT TOUCH feature"
+        bool "TFT_TOUCH"
+        help
+            Select to use TFT TOUCH component
+
+endmenu
