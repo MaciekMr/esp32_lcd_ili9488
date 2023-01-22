@@ -1,0 +1,16 @@
+{
+  "C_Cpp.intelliSenseEngine": "Tag Parser",
+  "files.associations": {
+    "regex": "cpp",
+    "string": "cpp",
+    "gpio.h": "c",
+    "esp_rom_gpio.h": "c",
+    "ili9488.h": "c"
+  },
+  "idf.portWin": "COM3",
+  "idf.adapterTargetName": "esp32",
+  "idf.openOcdConfigs": [
+    "board/esp32-wrover-kit-3.3v.cfg"
+  ],
+  "idf.flashType": "UART"
+}
